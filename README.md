@@ -95,3 +95,9 @@ git commit ...
 git push --set-upstream origin fix-***
 ```
 
+Don't save my password thanks.
+
+```bash
+git config --global --add credential.helper ""
+```
+

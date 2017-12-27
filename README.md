@@ -101,3 +101,9 @@ Don't save my password thanks.
 git config --global --add credential.helper ""
 ```
 
+Set editor properly for commit messages.
+
+```bash
+git config --global core.editor $(which vim)
+```
+

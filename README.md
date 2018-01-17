@@ -110,6 +110,6 @@ git config --global core.editor $(which vim)
 Setup SSH authentication.
 
 ```bash
-git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+git remote set-url --push origin git@github.com:USERNAME/REPOSITORY.git
 ```
 

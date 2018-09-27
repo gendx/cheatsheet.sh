@@ -113,3 +113,11 @@ Setup SSH authentication.
 git remote set-url --push origin git@github.com:USERNAME/REPOSITORY.git
 ```
 
+# `apt`
+
+Get rid of `The following packages have been kept back`.
+
+```bash
+apt-get --with-new-pkgs upgrade
+```
+

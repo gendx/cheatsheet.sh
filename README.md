@@ -95,6 +95,15 @@ git commit ...
 git push --set-upstream origin fix-***
 ```
 
+Sync submodules to fetched version on main repo.
+
+```bash
+git fetch
+git rebase
+git submodule status
+git submodule update
+```
+
 Don't save my password thanks.
 
 ```bash

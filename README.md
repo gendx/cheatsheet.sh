@@ -95,6 +95,12 @@ git commit ...
 git push --set-upstream origin fix-***
 ```
 
+Clone with submodules.
+
+```bash
+git clone --recurse-submodules https://github.com/USERNAME/REPOSITORY
+```
+
 Sync submodules to fetched version on main repo.
 
 ```bash

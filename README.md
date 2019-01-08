@@ -16,6 +16,19 @@ Count lines of sources files in project.
 find src -name *.[hc]pp -print0 | xargs -0 wc -l
 ```
 
+Find instances of "foo" in a project and print the filename/line numbers.
+
+```bash
+find src -name *.[hc]pp -exec grep -H -n "foo" {} \;
+```
+
+Replace "foo" by "bar" in a project.
+Pro tip: sed accepts any delimiter character.
+
+```bash
+find src -name *.[hc]pp -exec sed -i "s#foo#bar#g" {} \;
+```
+
 Set good default permissions after transfer through non-Unix filesystem.
 
 ```bash
@@ -48,6 +61,16 @@ Add user to group sudo.
 usermod -a -G sudo <user>
 ```
 
+Sum sizes of all PDF files.
+
+```bash
+# "tr" merges delimiters together.
+# The 5th column contains the file size.
+# "paste -d+" concatenates lines with a "+" delimiter.
+# "bc" calculates the input.
+find . -type f -name "*.pdf" -exec ls -l {} \; | tr -s ' ' | cut -d' ' -f 5 | paste -sd+ | bc
+```
+
 ## `find`
 
 Larger than 1MB.
@@ -56,7 +79,7 @@ Larger than 1MB.
 find . -type f -size +1M
 ```
 
-At most 5 days old.
+At most 5 days old (modification time).
 
 ```bash
 find . -type f -newermt '-5 days'

@@ -2,6 +2,39 @@ A bunch of useful bash commands.
 
 # Cheat sheet
 
+Profile with `perf`.
+
+```bash
+perf record ./a.out
+perf report -g graph,0.5,caller
+```
+
+List installed paquets.
+
+```bash
+dpkg --get-selections > .paquets
+```
+
+Add user to group sudo.
+
+```bash
+usermod -a -G sudo <user>
+```
+
+## `find`
+
+Larger than 1MB.
+
+```bash
+find . -type f -size +1M
+```
+
+At most 5 days old (modification time).
+
+```bash
+find . -type f -newermt '-5 days'
+```
+
 Replace tabs by spaces in a project.
 
 ```bash
@@ -42,25 +75,6 @@ Compress PDF files larger than 1MB.
 find . -type f -name "*.pdf" -size +1M -exec xz --verbose {} \;
 ```
 
-Profile with `perf`.
-
-```bash
-perf record ./a.out
-perf report -g graph,0.5,caller
-```
-
-List installed paquets.
-
-```bash
-dpkg --get-selections > .paquets
-```
-
-Add user to group sudo.
-
-```bash
-usermod -a -G sudo <user>
-```
-
 Sum sizes of all PDF files.
 
 ```bash
@@ -69,20 +83,6 @@ Sum sizes of all PDF files.
 # "paste -d+" concatenates lines with a "+" delimiter.
 # "bc" calculates the input.
 find . -type f -name "*.pdf" -exec ls -l {} \; | tr -s ' ' | cut -d' ' -f 5 | paste -sd+ | bc
-```
-
-## `find`
-
-Larger than 1MB.
-
-```bash
-find . -type f -size +1M
-```
-
-At most 5 days old (modification time).
-
-```bash
-find . -type f -newermt '-5 days'
 ```
 
 ## `git`
@@ -151,7 +151,7 @@ Setup SSH authentication.
 git remote set-url --push origin git@github.com:USERNAME/REPOSITORY.git
 ```
 
-# `apt`
+## `apt`
 
 Get rid of `The following packages have been kept back`.
 

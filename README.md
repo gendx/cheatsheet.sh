@@ -5,7 +5,7 @@ A bunch of useful bash commands.
 Profile with `perf`.
 
 ```bash
-perf record ./a.out
+perf record -g ./a.out
 perf report -g graph,0.5,caller
 ```
 

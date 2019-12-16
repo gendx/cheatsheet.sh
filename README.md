@@ -118,6 +118,14 @@ git commit ...
 git push --set-upstream origin fix-***
 ```
 
+Fetch branch from contributor.
+
+```bash
+git remote add <name> <url>
+git remote add -t <branch> <name>/<branch>
+git checkout <branch>
+```
+
 Clone with submodules.
 
 ```bash

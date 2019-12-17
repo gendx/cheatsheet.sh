@@ -21,6 +21,7 @@ Add user to group sudo.
 usermod -a -G sudo <user>
 ```
 
+
 ## `find`
 
 Larger than 1MB.
@@ -85,6 +86,7 @@ Sum sizes of all PDF files.
 find . -type f -name "*.pdf" -exec ls -l {} \; | tr -s ' ' | cut -d' ' -f 5 | paste -sd+ | bc
 ```
 
+
 ## `git`
 
 Squash all git commits.
@@ -141,6 +143,15 @@ git submodule status
 git submodule update
 ```
 
+Add tags.
+
+```bash
+git tag -a <tag> <commit>
+git push --follow-tags
+```
+
+### Configuration
+
 Don't save my password thanks.
 
 ```bash
@@ -170,6 +181,7 @@ Setup SSH authentication.
 ```bash
 git remote set-url --push origin git@github.com:USERNAME/REPOSITORY.git
 ```
+
 
 ## `apt`
 

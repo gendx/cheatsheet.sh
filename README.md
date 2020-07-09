@@ -105,9 +105,9 @@ Sync with upstream repo.
 
 ```bash
 git remote -v
-git remote add <name> <url>
-git fetch upstream
-git rebase upstream/master
+git remote add <remote-name> <url>
+git fetch <remote-name>
+git rebase <remote-name>/master
 git push
 git branch -d fix-***
 ```
@@ -123,9 +123,17 @@ git push --set-upstream origin fix-***
 Fetch branch from contributor.
 
 ```bash
-git remote add <name> <url>
-git remote add -t <branch> <name>/<branch>
+git remote add <remote-name> <url>
+git remote add -t <branch> <remote-name>/<branch>
 git checkout <branch>
+# Alternatively
+git checkout --track <remote-name>/<branch>
+```
+
+Make a local branch track a remote branck.
+
+```bash
+git branch --track <branch> <remote-name>/<branch>
 ```
 
 Clone with submodules.

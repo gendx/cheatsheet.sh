@@ -130,10 +130,16 @@ git checkout <branch>
 git checkout --track <remote-name>/<branch>
 ```
 
-Make a local branch track a remote branck.
+Make a local branch track a remote branch.
 
 ```bash
 git branch --track <branch> <remote-name>/<branch>
+```
+
+Prune branches that have been removed remotely.
+
+```bash
+git fetch --prune
 ```
 
 Clone with submodules.

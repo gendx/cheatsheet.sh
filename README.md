@@ -164,6 +164,19 @@ git tag -a <tag> <commit>
 git push --follow-tags
 ```
 
+Pull all branches.
+
+```bash
+for remote in `git branch -r -l origin/*`; do git checkout --track remotes/$remote; done
+```
+
+Push all branches (see https://stackoverflow.com/questions/6865302/push-local-git-repo-to-new-remote-including-all-branches-and-tags).
+
+```bash
+git push origin --all
+git push origin --tags
+```
+
 ### Configuration
 
 Don't save my password thanks.

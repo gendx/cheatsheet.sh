@@ -207,6 +207,7 @@ Setup SSH authentication.
 
 ```bash
 git remote set-url --push origin git@github.com:USERNAME/REPOSITORY.git
+git remote set-url --push origin git@codeberg.org:USERNAME/REPOSITORY.git
 ```
 
 
